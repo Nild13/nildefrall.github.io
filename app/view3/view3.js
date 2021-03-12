@@ -17,19 +17,19 @@ angular.module('myApp.view3', ['ngRoute'])
   .controller('View3Ctrl', ['$scope', 'localStorageService', function ($scope, localStorageService) {
     // $scope.name = ' ';
     // $scope.surname = ' ';
-    
+
     $scope.inputData = function (name, surname) {
       console.log(`key ${name} value ${surname}`);
-      if(name && surname){
-      let newsurNameDataFrominput = { 'name': name, 'surname': surname };
-      if (localStorage.getItem('people2') == null) {
-        localStorage.setItem('people2', '[]');
+      if (name && surname) {
+        let newsurNameDataFrominput = { 'name': name, 'surname': surname };
+        if (localStorage.getItem('people2') == null) {
+          localStorage.setItem('people2', '[]');
+        }
+        let oldsurNameDataFrominput = JSON.parse(localStorage.getItem('people2'))
+        oldsurNameDataFrominput.push(newsurNameDataFrominput);
+        localStorage.setItem('people2', JSON.stringify(oldsurNameDataFrominput));
+        $scope.getDataFromLS()
       }
-      let oldsurNameDataFrominput = JSON.parse(localStorage.getItem('people2'))
-      oldsurNameDataFrominput.push(newsurNameDataFrominput);
-      localStorage.setItem('people2', JSON.stringify(oldsurNameDataFrominput));
-      $scope.getDataFromLS()
-    }
     }
 
 
@@ -70,13 +70,13 @@ angular.module('myApp.view3', ['ngRoute'])
       let dataforRemove = JSON.parse(localStorage.getItem('people2'))
       console.log(dataforRemove[$scope.changeInput])
       dataforRemove.splice($scope.changeInput, 1);
-      $scope.peopleTab.splice($scope.changeInput,1);
+      $scope.peopleTab.splice($scope.changeInput, 1);
       localStorage.setItem('people2', JSON.stringify(dataforRemove));
       console.log('przeszlo caly')
       // location.reload()
-      
+
     }
-    
+
     $scope.peopleTab = []
     $scope.peopleTab2 = []
     $scope.getDataFromLS();

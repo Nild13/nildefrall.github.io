@@ -56,6 +56,10 @@ angular.module('myApp.view3', ['ngRoute'])
       }
       let oldData = JSON.parse(localStorage.getItem('people2'))
       console.log(oldData[$scope.changeInput])
+      // <------------------------------------------------------>
+      console.log($scope.peopleTab[$scope.changeInput])
+      $scope.peopleTab.splice($scope.changeInput, 1, newData)
+      // <------------------------------------------------------>
       oldData.splice($scope.changeInput, 1, newData);
       localStorage.setItem('people2', JSON.stringify(oldData));
       console.log('przeszlo caly')
@@ -66,10 +70,11 @@ angular.module('myApp.view3', ['ngRoute'])
       let dataforRemove = JSON.parse(localStorage.getItem('people2'))
       console.log(dataforRemove[$scope.changeInput])
       dataforRemove.splice($scope.changeInput, 1);
+      $scope.peopleTab.splice($scope.changeInput,1);
       localStorage.setItem('people2', JSON.stringify(dataforRemove));
       console.log('przeszlo caly')
       // location.reload()
-      $scope.peopleTab.splice($scope.changeInput,1);
+      
     }
     
     $scope.peopleTab = []

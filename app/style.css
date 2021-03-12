@@ -24,3 +24,7 @@
     display: block;
     margin-right: 86% !important;
 }
+.form-control::placeholder { 
+    color: rgba(0, 0, 0, 0.404);
+    opacity: 1;
+}

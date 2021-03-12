@@ -19,7 +19,8 @@
         <button class="ml-1 btn btn-primary diego" type="submit" ng-click="inputData(imie, nazwisko)">Dodaj</button>
         <!-- <button class="ml-1 btn btn-info" ng-click="getDataFromLS()">Wypisz dane z LS</button> -->
       </form>
-      
+    </br>
+          <input type="text" class="form-control alert alert-info" placeholder="Wyszukaj w tabeli" ng-model ="search">
   </br>
 </br>
     <table class="table table-sm container">
@@ -31,7 +32,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat = "(index,person) in peopleTab track by $index" >
+        <tr ng-repeat = "(index,person) in peopleTab | filter: search track by $index " >
           
           <th scope="row"><button type="button" class="btn btn-outline-primary" ng-click="removeRow()"><i class="icon-trash-empty"></i></button> <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModal" ng-click="showNameInInput(person)"><i class="icon-pencil"></i></button> {{index +1}}</th>
           <td>{{person.name}}</td>

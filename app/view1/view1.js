@@ -38,6 +38,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
     $scope.showNameInInput = function (person) {
       $scope.changeInput = $scope.peopleTab.indexOf(person)
+      console.log($scope.changeInput)
       let mienna = $scope.peopleTab[$scope.changeInput]
       $scope.newName = mienna.name;
       $scope.newSurname = mienna.surname;

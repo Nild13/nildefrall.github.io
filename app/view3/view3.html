@@ -1,0 +1,65 @@
+
+<div ng-controller='View3Ctrl'>
+    <div class="container">
+      
+    
+    <p class="font-weight-bold justif">Nowy Formularz</p>
+    <!-- Nowy formularz -->
+    <form name="myForm" class="form-inline">
+        <div class="form-group">
+          <label for="imie">Podaj swoje imię</label>
+          <input type="text" id="imie" class="form-control mx-sm-3" ng-model="imie" required>
+        </div>
+    </br>
+    </br>
+        <div class="form-group">
+          <label for="nazwisko">Podaj swoje nazwisko</label>
+          <input type="text" id="nazwisko" class="form-control mx-sm-3"ng-model="nazwisko" required>
+        </div>
+        <button class="ml-1 btn btn-primary diego" type="submit" ng-click="inputData(imie, nazwisko)">Dodaj</button>
+        <!-- <button class="ml-1 btn btn-info" ng-click="getDataFromLS()">Wypisz dane z LS</button> -->
+      </form>
+      
+  </br>
+</br>
+    <table class="table table-sm container">
+      <thead>
+        <tr >
+          <th scope="col">#</th>
+          <th scope="col">Imie</th>
+          <th scope="col">Nazwisko</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat = "(index,person) in peopleTab track by $index" >
+          
+          <th scope="row"><button type="button" class="btn btn-outline-primary" ng-click="removeRow()"><i class="icon-trash-empty"></i></button> <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModal" ng-click="showNameInInput(person)"><i class="icon-pencil"></i></button> {{index +1}}</th>
+          <td>{{person.name}}</td>
+          <td>{{person.surname}}</td>
+      </tbody>
+    </table>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edycja elementu</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label for="imieModal">Podaj Imię</label>
+        <input type="text" id="imieModal" class="form-control" ng-model='newName' value={{changeInput}}>
+        <label for="nazwiskoModal">Podaj Nazwisko</label>
+        <input type="text" id="nazwiskoModal" class="form-control" ng-model='newSurname' value={{changeInput}}>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info" data-dismiss="modal">Zamknij</button>
+        <button type="submit" class="btn btn-primary" data-dismiss="modal" ng-click="replaceNameAndSurname()">Zapisz zmiany</button>
+      </div>
+    </div>
+  </div>
+</div>
+   

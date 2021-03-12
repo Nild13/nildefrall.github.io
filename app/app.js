@@ -6,6 +6,7 @@ angular.module('myApp', [
   'LocalStorageModule',
   'myApp.view1',
   'myApp.view2',
+  'myApp.view3',
   'myApp.version',
 ]).
 config(['$locationProvider', '$routeProvider', 'localStorageServiceProvider', function($locationProvider, $routeProvider, localStorageServiceProvider) {

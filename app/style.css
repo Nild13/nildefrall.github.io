@@ -20,3 +20,7 @@
 .marginClass{
     margin-left: 500px;
 }
+.margins{
+    display: block;
+    margin-right: 86% !important;
+}

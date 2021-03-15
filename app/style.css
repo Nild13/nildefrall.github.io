@@ -19,7 +19,8 @@
 }
 .margins{
     display: block;
-    margin-right: 86% !important;
+    margin-right: 78.5% !important;
+    margin-left: 1%;
 }
 .form-control::placeholder { 
     color: rgba(0, 0, 0, 0.404);

@@ -1,0 +1,49 @@
+<div ng-controller='View7Ctrl'></div>
+
+<div class="container">
+    <h1 class="justif">Tekst nagłówka formularza</h1>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Imię</label>
+          <input type="email" class="form-control" id="inputEmail4">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Nazwisko</label>
+          <input type="password" class="form-control" id="inputPassword4">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputAddress">PESEL</label>
+        <input type="text" class="form-control" id="inputAddress">
+      </div>
+      <div class="form-group">
+        <label for="inputAddress2">Adres</label>
+        <input type="text" class="form-control" id="inputAddress2">
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputCity">Miasto</label>
+          <input type="text" class="form-control" id="inputCity">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputState">Województwo</label>
+          <input id="inputState" class="form-control">
+        
+        </div>
+        <div class="form-group col-md-2">
+          <label for="inputZip">Kod pocztowy</label>
+          <input type="text" class="form-control" id="inputZip">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck" ng-model="check">
+          <label class="form-check-label" for="gridCheck">
+            Potwierdzam prawdziwość danych
+          </label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" ng-disabled ="!check">Sign in</button>  
+    
+  
+</div>

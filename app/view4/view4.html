@@ -1,40 +1,45 @@
 <div ng-controller='View4Ctrl'></div>
 <div class="progress">
-  <div class="progress-bar bg-info" role="progressbar" style="width: 33%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+  <div class="progress-bar bg-info" role="progressbar" style="width: 5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
+
 <div class="container">
-    <h1 class="justif">Tekst nagłówka formularza</h1>
+  <form name="myForm" action="#!/view5">
+    <h1 class="justif">Bardzo ważny formularz</h1>
     <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="inputEmail4">Imię</label>
-          <input type="email" class="form-control" id="inputEmail4">
+          <label for="name">Imię</label>
+          <input type="text" class="form-control" id="name" required>
         </div>
         <div class="form-group col-md-6">
           <label for="inputPassword4">Nazwisko</label>
-          <input type="password" class="form-control" id="inputPassword4">
+          <input type="text" class="form-control" id="inputPassword4" required>
         </div>
       </div>
       <div class="form-group">
-        <label for="inputAddress">PESEL</label>
-        <input type="text" class="form-control" id="inputAddress">
+        <label for="PESEL">PESEL</label>
+        <input type="text" class="form-control" id="PESEL" required>
       </div>
       <div class="form-group">
-        <label for="inputAddress2">Adres</label>
-        <input type="text" class="form-control" id="inputAddress2">
+        <label for="confession">Wyznanie</label>
+        <input type="text" class="form-control" id="confession" required>
+      </div>
+      <div class="form-group">
+        <label for="likedClub">Ulubiony klub sportowy?</label>
+        <input type="text" class="form-control" id="likedClub" required>
+      </div>
+      <div class="form-group">
+        <label for="inputAddress">Adres</label>
+        <input type="text" class="form-control" id="inputAddress" required>
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="inputCity">Miasto</label>
-          <input type="text" class="form-control" id="inputCity">
+          <input type="text" class="form-control" id="inputCity" required>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
           <label for="inputState">Województwo</label>
-          <input id="inputState" class="form-control">
-        
-        </div>
-        <div class="form-group col-md-2">
-          <label for="inputZip">Kod pocztowy</label>
-          <input type="text" class="form-control" id="inputZip">
+          <input id="inputState" class="form-control" required>
         </div>
       </div>
       <div class="form-group">
@@ -46,9 +51,7 @@
         </div>
       </div>
       <!-- <a class="float-left ml-5" href="#!/view5"><button type="button" class="btn btn-secondary">Cofnij</button></a>  -->
-      <div></div>
-      <a class="mLeft1" href="#!/view5"><button type="button" class="btn btn-secondary">Przejdź dalej</button></a> 
-      
-    
-  
+      <button type="submit" class="btn btn-secondary mLeft1" ng-disabled="!check" ng-click="funkcjaButton()">Przejdź dalej</button>
+      <!-- <input type="submit" value="submit"> -->
+    </form>
 </div>

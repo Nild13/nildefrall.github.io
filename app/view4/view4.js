@@ -10,4 +10,9 @@ angular.module('myApp.view4', ['ngRoute'])
   }])
 
 
-  .controller('View4Ctrl', ['$scope', 'localStorageService', function ($scope, localStorageService){}]);
+  .controller('View4Ctrl', ['$scope', 'localStorageService', function ($scope, localStorageService){
+
+    $scope.funkcjaButton = function(){
+      
+    }
+  }]);

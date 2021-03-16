@@ -1,39 +1,40 @@
 <div ng-controller='View6Ctrl'></div>
 <div class="progress">
-  <div class="progress-bar bg-info" role="progressbar" style="width: 70%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+  <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" style="width: 70%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 <div class="container">
   <form  name="myForm" action="#!/view7">
-    <h1 class="justif">Bardzo ważny formularz</h1>
+    <h1 class="d-flex justify-content-center">Bardzo ważny formularz</h1>
+    <h5 class="d-flex justify-content-center">Strona 3</h5>
         <div class="form-group">
-          <label for="bestCPU">Ulubiona marka telefonu?</label>
-          <input type="text" class="form-control" id="bestCPU" required>
+          <label for="bestPhone">Ulubiona marka telefonu?</label>
+          <input type="text" class="form-control" id="bestPhone" ng-model= "newFormTelefon" required>
         </div>
         <div class="form-group">
-          <label for="bestGPU">Ulubiona marka butów?</label>
-          <input type="text" class="form-control" id="bestGPU" required>
+          <label for="bestBoots">Ulubiona marka butów?</label>
+          <input type="text" class="form-control" id="bestBoots" ng-model= "newFormButy" required>
         </div>
       <div class="form-group">
-        <label for="bestAnimal">Prezesem jedynej słusznej Partii jest?</label>
-        <input type="text" class="form-control" id="bestAnimal" required>
+        <label for="bestBoss">Prezesem jedynej słusznej Partii jest?</label>
+        <input type="text" class="form-control" id="bestBoss" ng-model= "newFormPrezes" required>
       </div>
       <div class="form-group">
-        <label for="policy">Kingston czy GoodRam?</label>
-        <input type="text" class="form-control" id="policy" required>
+        <label for="ram">Kingston czy GoodRam?</label>
+        <input type="text" class="form-control" id="ram" ng-model= "newFormRAM" required>
       </div>
       
       <div class="form-group">
-        <label for="size">Ulubiony sport?</label>
-        <input type="text" class="form-control" id="size" required>
+        <label for="favoritSport">Ulubiony sport?</label>
+        <input type="text" class="form-control" id="favoritSport" ng-model= "newFormSport" required>
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="childCity">Ulubiony sportowiec?</label>
-          <input type="text" class="form-control" id="childCity" required>
+          <label for="bestSportsmen">Ulubiony sportowiec?</label>
+          <input type="text" class="form-control" id="bestSportsmen" ng-model= "newFormSportowiec" required>
         </div>
         <div class="form-group col-md-6">
-          <label for="likeCity">Ile masz lat?</label>
-          <input id="inputState" class="form-control" id="likeCity" required>
+          <label for="old">Ile masz lat?</label>
+          <input id="inputState" class="form-control" id="old" ng-model= "newFormWiek" required>
         </div>
       </div>
       <div class="form-group">
@@ -45,7 +46,7 @@
         </div>
       </div>
       <a class="float-left ml-5" href="#!/view5"><button type="button" class="btn btn-secondary">Cofnij</button></a> 
-      <div></div>
-      <button type="submit" class="btn btn-secondary mLeft" ng-disabled="!check">Przejdź dalej</button>
+      <a href="#!/view3_1"><button type="button" class="btn btn-danger mLeft3">Anuluj</button></a>
+      <button type="submit" class="btn btn-secondary mLeft1" ng-click ="pushData6(newFormTelefon, newFormButy, newFormPrezes, newFormRAM, newFormSport, newFormSportowiec, newFormWiek)"ng-disabled="!check">Przejdź dalej</button>
     </form>
 </div>

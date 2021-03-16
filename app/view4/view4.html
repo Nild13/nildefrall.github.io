@@ -1,45 +1,46 @@
 <div ng-controller='View4Ctrl'></div>
 <div class="progress">
-  <div class="progress-bar bg-info" role="progressbar" style="width: 5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+  <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" style="width: 5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 
 <div class="container">
   <form name="myForm" action="#!/view5">
-    <h1 class="justif">Bardzo ważny formularz</h1>
+    <h1 class="d-flex justify-content-center">Bardzo ważny formularz</h1>
+    <h5 class="d-flex justify-content-center">Strona 1</h5>
     <div class="form-row">
         <div class="form-group col-md-6">
           <label for="name">Imię</label>
-          <input type="text" class="form-control" id="name" required>
+          <input type="text" class="form-control" id="name" ng-model = "newFormImie" ng-value="NFdataTab.name" required>
         </div>
         <div class="form-group col-md-6">
           <label for="inputPassword4">Nazwisko</label>
-          <input type="text" class="form-control" id="inputPassword4" required>
+          <input type="text" class="form-control" id="inputPassword4" ng-model = "newFormNazwisko" ng-value="NFdataTab.surname" required>
         </div>
       </div>
       <div class="form-group">
         <label for="PESEL">PESEL</label>
-        <input type="text" class="form-control" id="PESEL" required>
+        <input type="text" class="form-control" id="PESEL" ng-model = "newFormPESEL" ng-value="NFdataTab.PESEL" required>
       </div>
       <div class="form-group">
         <label for="confession">Wyznanie</label>
-        <input type="text" class="form-control" id="confession" required>
+        <input type="text" class="form-control" id="confession" ng-model = "newFormWyznanie" ng-value="NFdataTab.confession" required>
       </div>
       <div class="form-group">
         <label for="likedClub">Ulubiony klub sportowy?</label>
-        <input type="text" class="form-control" id="likedClub" required>
+        <input type="text" class="form-control" id="likedClub" ng-model = "newFormUKSportowy" ng-value="NFdataTab.FavoritSport" required>
       </div>
       <div class="form-group">
         <label for="inputAddress">Adres</label>
-        <input type="text" class="form-control" id="inputAddress" required>
+        <input type="text" class="form-control" id="inputAddress" ng-model = "newFormAdres" ng-value="NFdataTab.address" required>
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="inputCity">Miasto</label>
-          <input type="text" class="form-control" id="inputCity" required>
+          <input type="text" class="form-control" id="inputCity" ng-model = "newFormMiasto" ng-value="NFdataTab.city" required>
         </div>
         <div class="form-group col-md-6">
           <label for="inputState">Województwo</label>
-          <input id="inputState" class="form-control" required>
+          <input id="inputState" class="form-control" ng-model = "newFormWojewodztwo" ng-value="NFdataTab.voivodeship" required>
         </div>
       </div>
       <div class="form-group">
@@ -51,7 +52,8 @@
         </div>
       </div>
       <!-- <a class="float-left ml-5" href="#!/view5"><button type="button" class="btn btn-secondary">Cofnij</button></a>  -->
-      <button type="submit" class="btn btn-secondary mLeft1" ng-disabled="!check" ng-click="funkcjaButton()">Przejdź dalej</button>
+      <a href="#!/view3_1"><button type="button" class="btn btn-danger mLeft2">Anuluj</button></a>
+      <button type="submit" class="btn btn-secondary mLeft1" ng-disabled="!check" ng-click="pushData(newFormImie, newFormNazwisko, newFormPESEL, newFormWyznanie, newFormUKSportowy, newFormAdres, newFormMiasto, newFormWojewodztwo)">Przejdź dalej</button>
       <!-- <input type="submit" value="submit"> -->
     </form>
 </div>

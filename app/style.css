@@ -30,5 +30,20 @@
     margin-left: 850px;
 }
 .mLeft1{
-    margin-left: 965px;
+    /* margin-left: 965px; */
+    position: absolute;
+    left: 70%;
+}
+.mLeft2{
+    position: absolute;
+    left: 48%;
+}.mLeft3{
+    position: absolute;
+    left: 48%;
+}
+.mTop{
+    position: absolute;
+    font-size: 50px !important;
+    text-decoration: none;
+    top: 20%;
 }

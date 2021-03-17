@@ -27,9 +27,11 @@ angular.module('myApp.view4', ['ngRoute'])
           //<-------------------------------------------------------------->
           $scope.downloadDataFromLS()
     }
+    // cos ze splite, usun zawartosc i dodaj nowa to powinno rozwaizac problem :D jak wpiszesz we wszystkie inputy to sie wszystko zmienia pieknie, a jak tylko w jeden to nic
   }
+  $scope.NFdataTab = [];
           $scope.downloadDataFromLS = function () {
-          if (localStorage.getItem('NFdata') != null) {
+          if (localStorage.getItem('NFdata') !== null) {
             $scope.NFdataTab = JSON.parse(localStorage.getItem('NFdata'));
             console.log("Imie" +' '+ $scope.NFdataTab.name)
           }

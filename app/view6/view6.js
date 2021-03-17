@@ -22,10 +22,10 @@ angular.module('myApp.view6', ['ngRoute'])
         }
         localStorage.setItem('NFdata6', JSON.stringify(NFdataFromInput6));
          //<---------------------------------------------------------
-         let newDataForSummary = JSON.parse(localStorage.getItem('NFdata6'))
-         let oldDataForSummary = JSON.parse(localStorage.getItem('NFdata7'))
-         let blabla = Object.assign(newDataForSummary, oldDataForSummary)
-         localStorage.setItem('NFdata7', JSON.stringify(blabla));
+         let newDataForSummary3 = JSON.parse(localStorage.getItem('NFdata6'))
+         let oldDataForSummary3 = JSON.parse(localStorage.getItem('NFdata7'))
+         let blabla3 = Object.assign(newDataForSummary3, oldDataForSummary3)
+         localStorage.setItem('NFdata7', JSON.stringify(blabla3));
          //<---------------------------------------------------------
       }
     }

@@ -19,7 +19,12 @@ angular.module('myApp.view5', ['ngRoute'])
             localStorage.setItem('NFdata5', '[]');
           }
           localStorage.setItem('NFdata5', JSON.stringify(NFdataFromInput5));
-
+          //<---------------------------------------------------------
+          let newDataForSummary = JSON.parse(localStorage.getItem('NFdata5'))
+          let oldDataForSummary = JSON.parse(localStorage.getItem('NFdata7'))
+          let blabla = Object.assign(newDataForSummary, oldDataForSummary)
+          localStorage.setItem('NFdata7', JSON.stringify(blabla));
+          //<---------------------------------------------------------
         }
     }
     $scope.downloadDataFromLS5 = function () {

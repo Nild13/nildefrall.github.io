@@ -22,6 +22,9 @@ angular.module('myApp.view4', ['ngRoute'])
             localStorage.setItem('NFdata', '[]');
           }
           localStorage.setItem('NFdata', JSON.stringify(NFdataFromInput));
+          //<-------------------------------------------------------------->
+          localStorage.setItem('NFdata7', JSON.stringify(NFdataFromInput));
+          //<-------------------------------------------------------------->
           $scope.downloadDataFromLS()
     }
   }

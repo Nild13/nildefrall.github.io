@@ -17,6 +17,7 @@ angular.module('myApp.view3_1', ['ngRoute'])
   .controller('View3_1Ctrl', ['$scope', 'localStorageService', function ($scope, localStorageService){
     // $scope.flaga = "true";
     $scope.flaga = localStorage.getItem('NFdata') !== null
+    $scope.flaga2 = localStorage.getItem('NFdata7') !== null
     console.log($scope.flaga)
   //   $scope.funkcjaButton = function(){
   //     if (localStorage.getItem('NFdata') == null) {

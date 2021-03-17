@@ -18,7 +18,6 @@ angular.module('myApp.view7', ['ngRoute'])
       $scope.downloadDataFromLSsummary()
       $scope.downloadDataFromLSsummary5()
       $scope.downloadDataFromLSsummary6()
-      localStorage.setItem('NFdata7', 'true');
     }
     $scope.downloadDataFromLSsummary = function () {
       if (localStorage.getItem('NFdata') != null) {

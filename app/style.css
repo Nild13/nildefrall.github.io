@@ -45,5 +45,22 @@
     position: absolute;
     font-size: 50px !important;
     text-decoration: none;
+    top: 40%;
+}
+.buttonTop{
+    position: absolute;
     top: 20%;
+    left: 30%;
+    font-size: 50px !important;
+    text-decoration: none;
+}
+.buttonTop2{
+    position: absolute;
+    top: 60%;
+    left: 24,5%;
+    font-size: 50px !important;
+    text-decoration: none;
+}
+.colors{
+    background-color: blue;
 }

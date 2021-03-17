@@ -11,6 +11,8 @@ angular.module('myApp.view6', ['ngRoute'])
 
 
   .controller('View6Ctrl', ['$scope', 'localStorageService', function ($scope, localStorageService){
+    $scope.NFdataTab5 = [];
+    $scope.tekst = 'teskt';
     $scope.pushData6 = function(NFphone, NFboots, NFchairman, NFRAM, NFsport, NFsportsman, NFold){
       if(NFphone && NFboots && NFchairman && NFRAM && NFsport && NFsportsman && NFold){
 
@@ -20,6 +22,11 @@ angular.module('myApp.view6', ['ngRoute'])
         }
         localStorage.setItem('NFdata6', JSON.stringify(NFdataFromInput6));
       }
-
     }
+    $scope.downloadDataFromLS6 = function () {
+      if (localStorage.getItem('NFdata6') != null) {
+        $scope.NFdataTab6 = JSON.parse(localStorage.getItem('NFdata6'));
+      }
+      }
+      $scope.downloadDataFromLS6()
   }]);

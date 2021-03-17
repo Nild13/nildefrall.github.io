@@ -1,6 +1,9 @@
 <div ng-controller='View3_1Ctrl'>
-  <div class="container">
+  
+  <div class="container ">
     
-    <a class=" d-flex justify-content-center  navbar-light" href="#!/view4"><button type="button" class="btn btn-info mTop">Rozpocznij wypełnianie formularza</button></a>
-    <p>Wez tu dodaj jeszcze tak, ze bedzie przycisk rozpocznij wyolelnianie, ktory kasuje wszystko w ls i drugi ktory bedzie kontynuuj</p>
+    <a class=" d-flex justify-content-center  navbar-light" href="#!/view4"><button type="button" ng-show="{{flaga}}" class="btn btn-info buttonTop">Kontunuuj wypełnianie formularza</button></a>
+    <a class=" d-flex justify-content-center  navbar-light"><button type="button" ng-click="clearLS()"class="btn btn-primary mTop">Rozpocznij wypełnianie nowego formularza</button></a>
+    <a class=" d-flex justify-content-center  navbar-light"href="#!/view7"><button type="button" class="btn btn-warning buttonTop2">Zobacz podsumowanie swojego formularza</button></a>
     </div>
+ 

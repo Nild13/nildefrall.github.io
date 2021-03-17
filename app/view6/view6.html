@@ -1,4 +1,4 @@
-<div ng-controller='View6Ctrl'></div>
+<div ng-controller='View6Ctrl'>
 <div class="progress">
   <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" style="width: 70%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
@@ -8,33 +8,33 @@
     <h5 class="d-flex justify-content-center">Strona 3</h5>
         <div class="form-group">
           <label for="bestPhone">Ulubiona marka telefonu?</label>
-          <input type="text" class="form-control" id="bestPhone" ng-model= "newFormTelefon" required>
+          <input type="text" class="form-control" id="bestPhone" ng-model= "newFormTelefon" ng-value="NFdataTab6.FPhone" required>
         </div>
         <div class="form-group">
           <label for="bestBoots">Ulubiona marka butów?</label>
-          <input type="text" class="form-control" id="bestBoots" ng-model= "newFormButy" required>
+          <input type="text" class="form-control" id="bestBoots" ng-model= "newFormButy" ng-value="NFdataTab6.Boots" required>
         </div>
       <div class="form-group">
         <label for="bestBoss">Prezesem jedynej słusznej Partii jest?</label>
-        <input type="text" class="form-control" id="bestBoss" ng-model= "newFormPrezes" required>
+        <input type="text" class="form-control" id="bestBoss" ng-model= "newFormPrezes" ng-value="NFdataTab6.Chairman" required>
       </div>
       <div class="form-group">
         <label for="ram">Kingston czy GoodRam?</label>
-        <input type="text" class="form-control" id="ram" ng-model= "newFormRAM" required>
+        <input type="text" class="form-control" id="ram" ng-model= "newFormRAM" ng-value="NFdataTab6.RAM" required>
       </div>
       
       <div class="form-group">
         <label for="favoritSport">Ulubiony sport?</label>
-        <input type="text" class="form-control" id="favoritSport" ng-model= "newFormSport" required>
+        <input type="text" class="form-control" id="favoritSport" ng-model= "newFormSport" ng-value="NFdataTab6.FSport" required>
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="bestSportsmen">Ulubiony sportowiec?</label>
-          <input type="text" class="form-control" id="bestSportsmen" ng-model= "newFormSportowiec" required>
+          <input type="text" class="form-control" id="bestSportsmen" ng-model= "newFormSportowiec" ng-value="NFdataTab6.Sportsman" required>
         </div>
         <div class="form-group col-md-6">
           <label for="old">Ile masz lat?</label>
-          <input id="inputState" class="form-control" id="old" ng-model= "newFormWiek" required>
+          <input id="inputState" class="form-control" id="old" ng-model= "newFormWiek" ng-value="NFdataTab6.Old" required>
         </div>
       </div>
       <div class="form-group">
@@ -49,4 +49,5 @@
       <a href="#!/view3_1"><button type="button" class="btn btn-danger mLeft3">Anuluj</button></a>
       <button type="submit" class="btn btn-secondary mLeft1" ng-click ="pushData6(newFormTelefon, newFormButy, newFormPrezes, newFormRAM, newFormSport, newFormSportowiec, newFormWiek)"ng-disabled="!check">Przejdź dalej</button>
     </form>
+</div>
 </div>

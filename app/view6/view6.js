@@ -11,12 +11,31 @@ angular.module('myApp.view6', ['ngRoute'])
 
 
   .controller('View6Ctrl', ['$scope', 'localStorageService', function ($scope, localStorageService){
-    $scope.NFdataTab5 = [];
-    $scope.tekst = 'teskt';
-    $scope.pushData6 = function(NFphone, NFboots, NFchairman, NFRAM, NFsport, NFsportsman, NFold){
-      if(NFphone && NFboots && NFchairman && NFRAM && NFsport && NFsportsman && NFold){
-
-        let NFdataFromInput6 = { 'FPhone': NFphone, 'Boots': NFboots, 'Chairman':NFchairman, 'RAM': NFRAM, 'FSport': NFsport, 'Sportsman': NFsportsman, 'Old': NFold};
+    $scope.clearLS4 = function(){
+      if(confirm("Usunięcie spowoduje, że jeżeli rozpocząłeś pracę nad formularzem zostanie on wyczyszczony. Na pewno tego chcesz?")){
+        localStorage.removeItem("NFdata")
+        localStorage.removeItem("NFdata5")
+        localStorage.removeItem("NFdata6")
+        localStorage.removeItem("NFdata7")
+        window.location.href = "#!/view3_1";
+      }
+      
+      else{
+        alert("Anulowano")
+  }
+}
+    $scope.NFdataTab6 = [];
+    $scope.pushData6 = function(){
+    
+        let NFdataFromInput6 = {
+          'FPhone': $scope.NFdataTab6.FPhone, 
+          'Boots': $scope.NFdataTab6.Boots, 
+          'Chairman':$scope.NFdataTab6.Chairman, 
+          'RAM': $scope.NFdataTab6.RAM, 
+          'FSport': $scope.NFdataTab6.FSport, 
+          'Sportsman': $scope.NFdataTab6.Sportsman, 
+          'Old': $scope.NFdataTab6.Old
+        };
         if (localStorage.getItem('NFdata6') == null) {
           localStorage.setItem('NFdata6', '[]');
         }
@@ -27,8 +46,9 @@ angular.module('myApp.view6', ['ngRoute'])
          let blabla3 = Object.assign(newDataForSummary3, oldDataForSummary3)
          localStorage.setItem('NFdata7', JSON.stringify(blabla3));
          //<---------------------------------------------------------
-      }
+         $scope.downloadDataFromLS6()
     }
+    
     $scope.downloadDataFromLS6 = function () {
       if (localStorage.getItem('NFdata6') != null) {
         $scope.NFdataTab6 = JSON.parse(localStorage.getItem('NFdata6'));

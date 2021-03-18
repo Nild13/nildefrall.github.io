@@ -41,6 +41,16 @@
     position: absolute;
     left: 48%;
 }
+.mLeft4{
+    position: absolute;
+    left: 54%;
+    /* top: 82vh; */
+}
+.mLeft5{
+    position: absolute;
+    left: 63%;
+    /* top: 82vh; */
+}
 .mTop{
     position: absolute;
     font-size: 50px !important;

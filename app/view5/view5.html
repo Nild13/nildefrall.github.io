@@ -4,42 +4,50 @@
 </div>
 <div class="container">
   <form  name="myForm" action="#!/view6">
+   
     <h1 class="d-flex justify-content-center">Bardzo ważny formularz</h1>
-    <h5 class="d-flex justify-content-center">Strona 2</h5>
+    <nav aria-label="...">
+      <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link" >1</a></li>
+        <li class="page-item active" aria-current="page">
+          <span class="page-link">2</span>
+        <li class="page-item"><a class="page-link">3</a></li>
+      </ul>
+    </nav>
     <div class="form-row">
         <div class="form-group col-md-6">
           <label for="bestCPU">Jaki jest najlepszy procesor?</label>
-          <input type="text" class="form-control" id="bestCPU" ng-model="newFormCPU" ng-value="NFdataTab5.CPU" required>
+          <input type="text" class="form-control" id="bestCPU" ng-model="NFdataTab5.CPU" required>
         </div>
         <div class="form-group col-md-6">
           <label for="bestGPU">Jaka jest najlepsza karta graficzna?</label>
-          <input type="text" class="form-control" id="bestGPU" ng-model="newFormGPU" ng-value="NFdataTab5.GPU" required>
+          <input type="text" class="form-control" id="bestGPU" ng-model="NFdataTab5.GPU"required>
         </div>
       </div>
       <div class="form-group">
         <label for="bestAnimal">Twoje ulubione zwierze to?</label>
-        <input type="text" class="form-control" id="bestAnimal" ng-model="newFormAnimal" ng-value="NFdataTab5.Animal" required>
+        <input type="text" class="form-control" id="bestAnimal" ng-model="NFdataTab5.Animal"required>
       </div>
       <div class="form-group">
         <label for="policy">Jaka jest jedyna i słuszna partia polityczna w polsce?</label>
-        <input type="text" class="form-control" id="policy" ng-model="newFormPolityka" ng-value="NFdataTab5.Policy" required>
+        <input type="text" class="form-control" id="policy" ng-model="NFdataTab5.Policy"required>
       </div>
       <div class="form-group">
         <label for="bestFood">Twoim ulubionym jedzeniem jest?</label>
-        <input type="text" class="form-control" id="bestFood" ng-model="newFormJedzenie" ng-value="NFdataTab5.Food" required>
+        <input type="text" class="form-control" id="bestFood" ng-model="NFdataTab5.Food"required>
       </div>
       <div class="form-group">
         <label for="size">Ile mierzysz?</label>
-        <input type="text" class="form-control" id="size" ng-model="newFormRozmiar" ng-value="NFdataTab5.Size" required>
+        <input type="text" class="form-control" id="size" ng-model="NFdataTab5.Size" required>
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="childCity">Napisz nazwę miasta, w którym spędziłeś dzieciństwo:</label>
-          <input type="text" class="form-control" id="childCity" ng-model="newFormMiastoDziecinstwa" ng-value="NFdataTab5.ChildCity" required>
+          <input type="text" class="form-control" id="childCity" ng-model="NFdataTab5.ChildCity"required>
         </div>
         <div class="form-group col-md-6">
           <label for="likeCity">Podobało Ci się tam?</label>
-          <input id="inputState" class="form-control" id="likeCity" ng-model="newFormMiastoDziecinstwa2" ng-value="NFdataTab5.ChildCity2" required>
+          <input id="inputState" class="form-control" id="likeCity" ng-model="NFdataTab5.ChildCity2"required>
         </div>
       </div>
       <div class="form-group">
@@ -51,8 +59,9 @@
         </div>
       </div>
       <a class="float-left ml-5" href="#!/view4"><button type="button" class="btn btn-secondary">Cofnij</button></a> 
+      <a href="#!/view4"><button type="button" class="btn btn-warning mLeft4" ng-click="clearLS3()">Usuń wszystko i zacznij od nowa</button></a>
       <a href="#!/view3_1"><button type="button" class="btn btn-danger mLeft3">Anuluj</button></a>
-      <button type="submit" class="btn btn-secondary mLeft1" ng-click="pushData5(newFormCPU, newFormGPU, newFormAnimal, newFormPolityka, newFormJedzenie, newFormRozmiar, newFormMiastoDziecinstwa, newFormMiastoDziecinstwa2)" ng-disabled="!check">Przejdź dalej</button>
+      <button type="submit" class="btn btn-secondary mLeft1" ng-click="pushData5()" ng-disabled="!check">Przejdź dalej</button>
     </form>
 </div>
 </div>

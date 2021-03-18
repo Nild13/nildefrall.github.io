@@ -28,7 +28,7 @@ angular.module('myApp.view3_1', ['ngRoute'])
   //   }
   // }
     $scope.clearLS = function(){
-      if(confirm("Rozpoczęcie wypełniania spowoduje, że jeżeli rozpocząłeś pracę nad formularzem zostanie on wyczyszczony. Na pewno tego chcesz?")){
+      if(confirm("Na pewno chcesz rozpocząć pracę z nowym formularzem?")){
         localStorage.removeItem("NFdata")
         localStorage.removeItem("NFdata5")
         localStorage.removeItem("NFdata6")

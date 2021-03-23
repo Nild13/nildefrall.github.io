@@ -1,0 +1,67 @@
+<div ng-controller='View5_2Ctrl'>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" style="width: 40%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="container">
+  <form  name="myForm" action="#!/view6_2">
+   
+    <h1 class="d-flex justify-content-center">Bardzo ważny formularz</h1>
+    <nav aria-label="...">
+      <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link" >1</a></li>
+        <li class="page-item active" aria-current="page">
+          <span class="page-link">2</span>
+        <li class="page-item"><a class="page-link">3</a></li>
+      </ul>
+    </nav>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="bestCPU">Jaki jest najlepszy procesor?</label>
+          <input type="text" class="form-control" id="bestCPU" ng-model="NFdataTab5.CPU" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="bestGPU">Jaka jest najlepsza karta graficzna?</label>
+          <input type="text" class="form-control" id="bestGPU" ng-model="NFdataTab5.GPU"required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="bestAnimal">Twoje ulubione zwierze to?</label>
+        <input type="text" class="form-control" id="bestAnimal" ng-model="NFdataTab5.Animal"required>
+      </div>
+      <div class="form-group">
+        <label for="policy">Jaka jest jedyna i słuszna partia polityczna w polsce?</label>
+        <input type="text" class="form-control" id="policy" ng-model="NFdataTab5.Policy"required>
+      </div>
+      <div class="form-group">
+        <label for="bestFood">Twoim ulubionym jedzeniem jest?</label>
+        <input type="text" class="form-control" id="bestFood" ng-model="NFdataTab5.Food"required>
+      </div>
+      <div class="form-group">
+        <label for="size">Ile mierzysz?</label>
+        <input type="text" class="form-control" id="size" ng-model="NFdataTab5.Size" required>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="childCity">Napisz nazwę miasta, w którym spędziłeś dzieciństwo:</label>
+          <input type="text" class="form-control" id="childCity" ng-model="NFdataTab5.ChildCity"required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="likeCity">Podobało Ci się tam?</label>
+          <input id="inputState" class="form-control" id="likeCity" ng-model="NFdataTab5.ChildCity2"required>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck" ng-model="check">
+          <label class="form-check-label" for="gridCheck">
+            Potwierdzam prawdziwość danych
+          </label>
+        </div>
+      </div>
+      <a class="float-left ml-5" href="#!/view4_2"><button type="button" class="btn btn-secondary">Cofnij</button></a> 
+      <a href="#!/view4_2"><button type="button" class="btn btn-warning mLeft4" ng-click="clearLS3()">Usuń wszystko i zacznij od nowa</button></a>
+      <a href="#!/view3_1_2"><button type="button" class="btn btn-danger mLeft3">Anuluj</button></a>
+      <button type="submit" class="btn btn-secondary mLeft1" ng-click="pushData5()" ng-disabled="!check">Przejdź dalej</button>
+    </form>
+</div>
+</div>

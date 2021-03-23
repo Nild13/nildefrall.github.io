@@ -1,0 +1,106 @@
+<div ng-controller='View7_2Ctrl'>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 100%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="container">
+    <h1 class="d-flex justify-content-center">Podsumowanie</h1>
+    <h5 class="d-flex justify-content-center">Na podstawie zebranych informacji z formularza</h5>
+<content>
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <td>Imię:</td>
+        <td>{{NFdata7.name}}</td>
+      </tr>
+      <tr>
+        <td>Nazwisko:</td>
+        <td>{{NFdata7.surname}}</td>
+      </tr>
+      <tr>
+        <td>PESEL:</td>
+        <td>{{NFdata7.PESEL}}</td>
+      </tr>
+      <tr>
+        <td>Wyznanie:</td>
+        <td>{{NFdata7.confession}}</td>
+      </tr>
+      <tr>
+        <td>Ulubiony klub sportowy:</td>
+        <td>{{NFdata7.FavoritSport}}</td>
+      </tr>
+      <tr>
+        <td>Adres:</td>
+        <td>{{NFdata7.address}}</td>
+      </tr>
+      <tr>
+        <td>Miasto:</td>
+        <td>{{NFdata7.city}}</td>
+      </tr>
+      <tr>
+        <td>Województwo:</td>
+        <td>{{NFdata7.voivodeship}}</td>
+      </tr>
+      <tr>
+        <td>Najlepszy procesor:</td>
+        <td>{{NFdata7.CPU}}</td>
+      </tr>
+      <tr>
+        <td>Najlepsza karta graficzna:</td>
+        <td>{{NFdata7.GPU}}</td>
+      </tr>
+      <tr>
+        <td>Ulubione zwierze:</td>
+        <td>{{NFdata7.Animal}}</td>
+      </tr>
+      <tr>
+        <td>Jedyna słuszna partia polityczna:</td>
+        <td>{{NFdata7.Policy}}</td>
+      </tr>
+      <tr>
+        <td>Ulubione jedzenie:</td>
+        <td>{{NFdata7.Food}}</td>
+      </tr>
+      <tr>
+        <td>Wysokość:</td>
+        <td>{{NFdata7.Size}}</td>
+      </tr>
+      <tr>
+        <td>Miejsce dorastania:</td>
+        <td>{{NFdata7.ChildCity}}</td>
+      </tr>
+      <tr>
+        <td>Najlepszym telefonem jest:</td>
+        <td>{{NFdata7.FPhone}}</td>
+      </tr>
+      <tr>
+        <td>Ulubiona marka butów:</td>
+        <td>{{NFdata7.Boots}}</td>
+      </tr>
+      <tr>
+        <td>Prezesem jedynej słusznej Partii jest:</td>
+        <td>{{NFdata7.Chairman}}</td>
+      </tr>
+      <tr>
+        <td>Kingston vs GoodRam</td>
+        <td>{{NFdata7.RAM}}</td>
+      </tr>
+      <tr>
+        <td>Ulubiony sport:</td>
+        <td>{{NFdata7.FSport}}</td>
+      </tr>
+      <tr>
+        <td>Ulubiony sportowiec:</td>
+        <td>{{NFdata7.Sportsman}}</td>
+      </tr>
+      <tr>
+        <td>Wiek:</td>
+        <td>{{NFdata7.Old}}lat</td>
+      </tr>
+    </tbody>
+  </table>
+</content>
+      <a class="float-left ml-5" href="#!/view6_2"><button type="button" class="btn btn-secondary">Cofnij</button></a> 
+      <a href="#!/view3_1_2"><button type="button" class="btn btn-danger mLeft3">Wyjdź</button></a>
+      <button type="button" class="btn btn-warning mLeft5" ng-click="clearLS5()">Usuń wszystko i zacznij od nowa</button>
+<p></p>
+</div>

@@ -1,0 +1,61 @@
+<div ng-controller='View6_2Ctrl'>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" style="width: 70%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="container">
+  <form  name="myForm" action="#!/view7_2">
+    <h1 class="d-flex justify-content-center">Bardzo ważny formularz</h1>
+    <nav aria-label="...">
+      <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link" >1</a></li>
+        <li class="page-item"><a class="page-link">2</a></li>
+          <li class="page-item active" aria-current="page">
+            <span class="page-link">3</span>
+      </ul>
+    </nav>
+        <div class="form-group">
+          <label for="bestPhone">Ulubiona marka telefonu?</label>
+          <input type="text" class="form-control" id="bestPhone" ng-model="NFdataTab6.FPhone"required>
+        </div>
+        <div class="form-group">
+          <label for="bestBoots">Ulubiona marka butów?</label>
+          <input type="text" class="form-control" id="bestBoots" ng-model="NFdataTab6.Boots"required>
+        </div>
+      <div class="form-group">
+        <label for="bestBoss">Prezesem jedynej słusznej Partii jest?</label>
+        <input type="text" class="form-control" id="bestBoss" ng-model="NFdataTab6.Chairman"required>
+      </div>
+      <div class="form-group">
+        <label for="ram">Kingston czy GoodRam?</label>
+        <input type="text" class="form-control" id="ram" ng-model="NFdataTab6.RAM"required>
+      </div>
+      
+      <div class="form-group">
+        <label for="favoritSport">Ulubiony sport?</label>
+        <input type="text" class="form-control" id="favoritSport" ng-model="NFdataTab6.FSport" required>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="bestSportsmen">Ulubiony sportowiec?</label>
+          <input type="text" class="form-control" id="bestSportsmen" ng-model="NFdataTab6.Sportsman" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="old">Ile masz lat?</label>
+          <input id="inputState" class="form-control" id="old" ng-model="NFdataTab6.Old"required>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck" ng-model="check">
+          <label class="form-check-label" for="gridCheck">
+            Potwierdzam prawdziwość danych
+          </label>
+        </div>
+      </div>
+      <a class="float-left ml-5" href="#!/view5_2"><button type="button" class="btn btn-secondary">Cofnij</button></a> 
+      <a href="#!/view3_1_2"><button type="button" class="btn btn-danger mLeft3">Anuluj</button></a>
+      <a href="#!/view4_2"><button type="button" class="btn btn-warning mLeft4" ng-click="clearLS4()">Usuń wszystko i zacznij od nowa</button></a>
+      <button type="submit" class="btn btn-secondary mLeft1" ng-click ="pushData6()"ng-disabled="!check">Przejdź dalej</button>
+    </form>
+</div>
+</div>

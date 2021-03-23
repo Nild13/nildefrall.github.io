@@ -19,7 +19,11 @@
 }
 .margins{
     display: block;
-    margin-right: 78.5% !important;
+    margin-right: 70% !important;
+    margin-left: 1%;
+}
+.margins2{
+    display: block;
     margin-left: 1%;
 }
 .form-control::placeholder { 

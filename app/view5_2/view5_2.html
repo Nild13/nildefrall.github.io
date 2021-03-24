@@ -59,9 +59,32 @@
         </div>
       </div>
       <a class="float-left ml-5" href="#!/view4_2"><button type="button" class="btn btn-secondary">Cofnij</button></a> 
-      <a href="#!/view4_2"><button type="button" class="btn btn-warning mLeft4" ng-click="clearLS3()">Usuń wszystko i zacznij od nowa</button></a>
+      <button type="button" class="btn btn-warning mLeft4" data-toggle="modal" data-target="#alertModal5_2">Usuń wszystko i zacznij od nowa</button>
       <a href="#!/view3_1_2"><button type="button" class="btn btn-danger mLeft3">Anuluj</button></a>
       <button type="submit" class="btn btn-secondary mLeft1" ng-click="pushData5()" ng-disabled="!check">Przejdź dalej</button>
     </form>
+    <!-- -modal------------------------------------------------------------------------- -->
+    <div class="modal fade" id="alertModal5_2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Czyszczenie formularza</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Usunięcie spowoduje, że jeżeli rozpocząłeś pracę nad formularzem zostanie on wyczyszczony. Na pewno tego chcesz?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" data-dismiss="modal">Anuluj</button>
+          <button type="submit" class="btn btn-primary" data-dismiss="modal" ng-click="clearLS3()">Usuń</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div></div>
+<!-- modal----------------------------------------------------------------------------------------------- -->
 </div>
 </div>

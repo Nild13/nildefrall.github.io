@@ -12,22 +12,22 @@ angular.module('myApp.view7_2', ['ngRoute'])
 
   .controller('View7_2Ctrl', ['$scope', 'localStorageService', function ($scope, localStorageService){
     $scope.clearLS5 = function(){
-      if(confirm("Usunięcie spowoduje, że stracisz wszystkie dane. Na pewno tego chcesz?")){
-        localStorage.removeItem("NFdata")
-        localStorage.removeItem("NFdata5")
-        localStorage.removeItem("NFdata6")
-        localStorage.removeItem("NFdata7")
+      // if(confirm("Usunięcie spowoduje, że stracisz wszystkie dane. Na pewno tego chcesz?")){
+        localStorage.removeItem("NFdata_2")
+        localStorage.removeItem("NFdata5_2")
+        localStorage.removeItem("NFdata6_2")
+        localStorage.removeItem("NFdata7_2")
         window.location.href = "#!/view3_1_2";
       }
       
-      else{
-        alert("Anulowano")
-  }
-}
+//       else{
+//         alert("Anulowano")
+//   }
+// }
     $scope.NFdata7 = [];
     $scope.downloadDataFromLS7 = function () {
-      if (localStorage.getItem('NFdata7') != null) {
-        $scope.NFdata7 = JSON.parse(localStorage.getItem('NFdata7'));
+      if (localStorage.getItem('NFdata7_2') != null) {
+        $scope.NFdata7 = JSON.parse(localStorage.getItem('NFdata7_2'));
       }
     }
     $scope.downloadDataFromLS7()

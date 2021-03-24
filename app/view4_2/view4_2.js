@@ -12,17 +12,18 @@ angular.module('myApp.view4_2', ['ngRoute'])
 
   .controller('View4_2Ctrl', ['$scope', 'localStorageService', function ($scope, localStorageService){
     $scope.clearLS2 = function(){
-      if(confirm("Usunięcie spowoduje, że jeżeli rozpocząłeś pracę nad formularzem zostanie on wyczyszczony. Na pewno tego chcesz?")){
-        localStorage.removeItem("NFdata")
-        localStorage.removeItem("NFdata5")
-        localStorage.removeItem("NFdata6")
-        localStorage.removeItem("NFdata7")
+     
+      // if(confirm("Usunięcie spowoduje, że jeżeli rozpocząłeś pracę nad formularzem zostanie on wyczyszczony. Na pewno tego chcesz?")){
+        localStorage.removeItem("NFdata_2")
+        localStorage.removeItem("NFdata5_2")
+        localStorage.removeItem("NFdata6_2")
+        localStorage.removeItem("NFdata7_2")
         window.location.href = "#!/view3_1_2";
-      }
-      
-      else{
-        alert("Anulowano")
-  }
+      // }
+      //tu modal
+  //     else{
+  //       alert("Anulowano")
+  // }
 }
     $scope.NFdataTab = [];
     $scope.pushData = function(){
@@ -41,12 +42,12 @@ angular.module('myApp.view4_2', ['ngRoute'])
             'voivodeship': $scope.NFdataTab.voivodeship
           };
 
-          if (localStorage.getItem('NFdata') == null) {
-            localStorage.setItem('NFdata', '[]');
+          if (localStorage.getItem('NFdata_2') == null) {
+            localStorage.setItem('NFdata_2', '[]');
           }
-          localStorage.setItem('NFdata', JSON.stringify(NFdataFromInput));
+          localStorage.setItem('NFdata_2', JSON.stringify(NFdataFromInput));
           //<-------------------------------------------------------------->
-          localStorage.setItem('NFdata7', JSON.stringify(NFdataFromInput));
+          localStorage.setItem('NFdata7_2', JSON.stringify(NFdataFromInput));
           //<-------------------------------------------------------------->
           $scope.downloadDataFromLS()
           console.log(NFdataFromInput.name)
@@ -54,9 +55,9 @@ angular.module('myApp.view4_2', ['ngRoute'])
   // }
   
           $scope.downloadDataFromLS = function () {
-          if (localStorage.getItem('NFdata') !== null) {
-            $scope.NFdataTab = JSON.parse(localStorage.getItem('NFdata'))
-            $scope.NFdataTaba = JSON.parse(localStorage.getItem('NFdata')).name
+          if (localStorage.getItem('NFdata_2') !== null) {
+            $scope.NFdataTab = JSON.parse(localStorage.getItem('NFdata_2'))
+            $scope.NFdataTaba = JSON.parse(localStorage.getItem('NFdata_2')).name
             console.log($scope.NFdataTab)
           }
   }

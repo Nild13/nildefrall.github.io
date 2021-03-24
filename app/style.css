@@ -87,3 +87,6 @@ button[disabled='disabled']{
 select.ng-invalid.ng-touched{
     border:2px solid red;
 }
+input.ng-empty{
+    box-shadow: none !important;
+}

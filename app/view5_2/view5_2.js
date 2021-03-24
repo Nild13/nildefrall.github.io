@@ -10,6 +10,14 @@ angular.module('myApp.view5_2', ['ngRoute'])
   }])
  
   .controller('View5_2Ctrl', ['$scope', 'localStorageService', function ($scope, localStorageService){
+    $scope.isChecked = true;
+    $scope.checkStuff = function () {
+        $scope.isChecked = false;
+    }
+    
+    $scope.checkStuff2 = function () {
+        $scope.isChecked = true;
+    }
     $scope.clearLS3 = function(){
       // if(confirm("Usunięcie spowoduje, że jeżeli rozpocząłeś pracę nad formularzem zostanie on wyczyszczony. Na pewno tego chcesz?")){
         localStorage.removeItem("NFdata_2")

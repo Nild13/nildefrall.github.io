@@ -45,14 +45,32 @@
       </div>
       <div class="form-group">
         <label for="policy">Jaka jest jedyna i słuszna partia polityczna w polsce?</label>
-        <input type="text" class="form-control" id="policy" name="policyInput"ng-model="NFdataTab5.Policy"ng-required="true">
-        <div ng-show="myForm.policyInput.$touched && myForm.policyInput.$invalid">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" ng-model="NFdataTab5.Policy" id="exampleRadios1" value="Prawo i Sprawiedliwość"  ng-required="true" ng-checked="true"  ng-change="checkStuff2()" checked>
+          <label class="form-check-label" for="exampleRadios1">
+            Prawo i Sprawiedliwość
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" ng-model="NFdataTab5.Policy" id="exampleRadios2" value="Platforma Obywatelska" ng-change="checkStuff()">
+          <label class="form-check-label" for="exampleRadios2">
+            Platforma Obywatelska
+          </label>
+        </div>
+        <div class="form-check disabled">
+          <input class="form-check-input" type="radio" name="exampleRadios" ng-model="NFdataTab5.Policy" id="exampleRadios3" value="Wiosna" ng-change="checkStuff()">
+          <label class="form-check-label" for="exampleRadios3">
+            Wiosna
+          </label>
+        </div>
+        <!-- <input type="text" class="form-control" id="policy" name="policyInput"ng-model="NFdataTab5.Policy"ng-required="true"> -->
+        <div ng-hide="isChecked">
           <small style="color:red; display: block; text-align: center;">Podaj prawidłową partię polityczną</small>
         </div>
       </div>
       <div class="form-group">
         <label for="bestFood">Twoim ulubionym jedzeniem jest?</label>
-        <input type="text" class="form-control" id="bestFood" name="jedzenieInput"ng-model="NFdataTab5.Food"ng-required="true">
+        <input type="text" class="form-control" id="bestFood" name="jedzenieInput"ng-model="NFdataTab5.Food"ng-required="false">
         <div ng-show="myForm.jedzenieInput.$touched && myForm.jedzenieInput.$invalid">
           <small style="color:red; display: block; text-align: center;">Podaj prawidłowe jedzenie</small>
         </div>
@@ -87,7 +105,7 @@
       <a class="float-left ml-5" href="#!/view4_2"><button type="button" class="btn btn-secondary">Cofnij</button></a> 
       <button type="button" class="btn btn-warning mLeft4" data-toggle="modal" data-target="#alertModal5_2">Usuń wszystko i zacznij od nowa</button>
       <a href="#!/view3_1_2"><button type="button" class="btn btn-danger mLeft3">Anuluj</button></a>
-      <button type="submit" class="btn btn-secondary mLeft1" ng-click="pushData5()" ng-disabled="myForm.$invalid">Przejdź dalej</button>
+      <button type="submit" class="btn btn-secondary mLeft1" ng-click="pushData5()" ng-disabled="myForm.$invalid || NFdataTab5.Policy !== 'Prawo i Sprawiedliwość'">Przejdź dalej</button>
     </form>
     <!-- -modal------------------------------------------------------------------------- -->
     <div class="modal fade" id="alertModal5_2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

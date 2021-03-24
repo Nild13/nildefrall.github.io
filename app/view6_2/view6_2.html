@@ -15,47 +15,84 @@
     </nav>
         <div class="form-group">
           <label for="bestPhone">Ulubiona marka telefonu?</label>
-          <input type="text" class="form-control" id="bestPhone" ng-model="NFdataTab6.FPhone"required>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" ng-model="NFdataTab6.FPhone" id="exampleRadios1" value="Apple" ng-required="true">
+            <label class="form-check-label" for="exampleRadios1">
+              Apple
+            </label>
+            
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" ng-model="NFdataTab6.FPhone" id="exampleRadios2" value="Sony">
+            <label class="form-check-label" for="exampleRadios2">
+              Sony
+            </label>
+          </div>
+          <div class="form-check disabled">
+            <input class="form-check-input" type="radio" name="exampleRadios" ng-model="NFdataTab6.FPhone" id="exampleRadios3" value="Motorola">
+            <label class="form-check-label" for="exampleRadios3">
+              Motorola
+            </label>
+          </div>
+          <!-- <input type="text" class="form-control" id="bestPhone" ng-model="NFdataTab6.FPhone"required> -->
         </div>
         <div class="form-group">
           <label for="bestBoots">Ulubiona marka butów?</label>
-          <input type="text" class="form-control" id="bestBoots" ng-model="NFdataTab6.Boots"required>
+          <input type="text" class="form-control" id="bestBoots" name="butyInput" ng-model="NFdataTab6.Boots" ng-required="true">
+          <div ng-show="myForm.butyInput.$touched && myForm.butyInput.$invalid">
+            <small style="color: red; display: block; text-align: center;">Wprowadź poprawną markę butów</small>
+          </div>
         </div>
       <div class="form-group">
         <label for="bestBoss">Prezesem jedynej słusznej Partii jest?</label>
-        <input type="text" class="form-control" id="bestBoss" ng-model="NFdataTab6.Chairman"required>
+        <input type="text" class="form-control" id="bestBoss" name="jarekInput" ng-model="NFdataTab6.Chairman" ng-required="true">
+        <div ng-show="myForm.jarekInput.$touched && myForm.jarekInput.$invalid">
+          <small style="color: red; display: block; text-align: center;">Wprowadź poprawnego Prezesa</small>
+        </div>
       </div>
       <div class="form-group">
         <label for="ram">Kingston czy GoodRam?</label>
-        <input type="text" class="form-control" id="ram" ng-model="NFdataTab6.RAM"required>
+        <input type="text" class="form-control" id="ram" name="ramInput"ng-model="NFdataTab6.RAM" ng-required="true">
+        <div ng-show="myForm.ramInput.$touched && myForm.ramInput.$invalid">
+          <small style="color: red; display: block; text-align: center;">Wprowadź poprawną pamięć RAM</small>
+        </div>
       </div>
       
       <div class="form-group">
         <label for="favoritSport">Ulubiony sport?</label>
-        <input type="text" class="form-control" id="favoritSport" ng-model="NFdataTab6.FSport" required>
+        <input type="text" class="form-control" id="favoritSport" name="usportInput"ng-model="NFdataTab6.FSport" ng-required="true">
+        <div ng-show="myForm.usportInput.$touched && myForm.usportInput.$invalid">
+          <small style="color: red; display: block; text-align: center;">Wprowadź poprawny sport</small>
+        </div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="bestSportsmen">Ulubiony sportowiec?</label>
-          <input type="text" class="form-control" id="bestSportsmen" ng-model="NFdataTab6.Sportsman" required>
+          <input type="text" class="form-control" id="bestSportsmen" name="sportowiecInput" ng-model="NFdataTab6.Sportsman"ng-required="true">
+          <div ng-show="myForm.sportowiecInput.$touched && myForm.sportowiecInput.$invalid">
+            <small style="color: red; display: block; text-align: center;">Wprowadź poprawnego sportowca</small>
+          </div>
         </div>
         <div class="form-group col-md-6">
-          <label for="old">Ile masz lat?</label>
-          <input id="inputState" class="form-control" id="old" ng-model="NFdataTab6.Old"required>
+          <label for="old">Ile jest 5+5?</label>
+          <input class="form-control" id="old" name="wiekInput" ng-model="NFdataTab6.Old" min="10" max="10" type="number" ng-required="true">
+          <div ng-show="myForm.wiekInput.$touched && myForm.wiekInput.$invalid">
+            <small style="color: red; display: block; text-align: center;">Wprowadź poprawny wynik</small>
+          </div>
         </div>
       </div>
       <div class="form-group">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck" ng-model="check">
+          <input class="form-check-input" type="checkbox" id="gridCheck" ng-model="check" ng-required="true">
           <label class="form-check-label" for="gridCheck">
-            Potwierdzam prawdziwość danych
+            Mam skończone 18 lat
           </label>
         </div>
       </div>
       <a class="float-left ml-5" href="#!/view5_2"><button type="button" class="btn btn-secondary">Cofnij</button></a> 
       <a href="#!/view3_1_2"><button type="button" class="btn btn-danger mLeft3">Anuluj</button></a>
       <button type="button" class="btn btn-warning mLeft4" data-toggle="modal" data-target="#alertModal6_2">Usuń wszystko i zacznij od nowa</button>
-      <button type="submit" class="btn btn-secondary mLeft1" ng-click ="pushData6()"ng-disabled="!check">Przejdź dalej</button>
+      <button type="submit" class="btn btn-secondary mLeft1" ng-click ="pushData6()"ng-disabled="myForm.$invalid">Przejdź dalej</button>
     </form>
     <!-- -modal------------------------------------------------------------------------- -->
     <div class="modal fade" id="alertModal6_2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

@@ -78,3 +78,12 @@
 .colors{
     background-color: blue;
 }
+input.ng-invalid.ng-touched{
+    border:2px solid red;
+}
+button[disabled='disabled']{
+    cursor: not-allowed;
+}
+select.ng-invalid.ng-touched{
+    border:2px solid red;
+}

@@ -17,51 +17,77 @@
     <div class="form-row">
         <div class="form-group col-md-6">
           <label for="bestCPU">Jaki jest najlepszy procesor?</label>
-          <input type="text" class="form-control" id="bestCPU" ng-model="NFdataTab5.CPU" required>
+          <input type="text" class="form-control" id="bestCPU" name="cpuInput" ng-model="NFdataTab5.CPU" ng-required="true">
+          <div ng-show="myForm.cpuInput.$touched && myForm.cpuInput.$invalid">
+            <small style="color:red; display: block; text-align: center;">Podaj prawidłowy procesor</small>
+          </div>
         </div>
         <div class="form-group col-md-6">
           <label for="bestGPU">Jaka jest najlepsza karta graficzna?</label>
-          <input type="text" class="form-control" id="bestGPU" ng-model="NFdataTab5.GPU"required>
+          <input type="text" class="form-control" id="bestGPU" name="gpuInput"ng-model="NFdataTab5.GPU"ng-required="true">
+          <div ng-show="myForm.gpuInput.$touched && myForm.gpuInput.$invalid">
+            <small style="color:red; display: block; text-align: center;">Podaj prawidłową kartę graficzną</small>
+          </div>
         </div>
       </div>
       <div class="form-group">
         <label for="bestAnimal">Twoje ulubione zwierze to?</label>
-        <input type="text" class="form-control" id="bestAnimal" ng-model="NFdataTab5.Animal"required>
+        <select name="zwierzeInput"ng-model="NFdataTab5.Animal" class="custom-select" ng-required="true">
+          <option value="Pies">Pies</option>
+          <option value="Kot">Kot</option>
+          <option value="Rybki">Rybki</option>
+          <option value="Mysz od komputera">Mysz od komputera</option>
+        </select>
+        <div ng-show="myForm.zwierzeInput.$touched && myForm.zwierzeInput.$invalid">
+          <small style="color:red; display: block; text-align: center;">Podaj prawidłowe zwierze</small>
+        </div>
+        <!-- <input type="text" class="form-control" id="bestAnimal" ng-model="NFdataTab5.Animal"required> -->
       </div>
       <div class="form-group">
         <label for="policy">Jaka jest jedyna i słuszna partia polityczna w polsce?</label>
-        <input type="text" class="form-control" id="policy" ng-model="NFdataTab5.Policy"required>
+        <input type="text" class="form-control" id="policy" name="policyInput"ng-model="NFdataTab5.Policy"ng-required="true">
+        <div ng-show="myForm.policyInput.$touched && myForm.policyInput.$invalid">
+          <small style="color:red; display: block; text-align: center;">Podaj prawidłową partię polityczną</small>
+        </div>
       </div>
       <div class="form-group">
         <label for="bestFood">Twoim ulubionym jedzeniem jest?</label>
-        <input type="text" class="form-control" id="bestFood" ng-model="NFdataTab5.Food"required>
+        <input type="text" class="form-control" id="bestFood" name="jedzenieInput"ng-model="NFdataTab5.Food"ng-required="true">
+        <div ng-show="myForm.jedzenieInput.$touched && myForm.jedzenieInput.$invalid">
+          <small style="color:red; display: block; text-align: center;">Podaj prawidłowe jedzenie</small>
+        </div>
       </div>
       <div class="form-group">
         <label for="size">Ile mierzysz?</label>
-        <input type="text" class="form-control" id="size" ng-model="NFdataTab5.Size" required>
+        <input type="number" class="form-control" id="size" name="rozmiarInput"ng-model="NFdataTab5.Size" ng-required="true">
+        <div ng-show="myForm.rozmiarInput.$touched && myForm.rozmiarInput.$invalid">
+          <small style="color:red; display: block; text-align: center;">Podaj prawidłow wzrost</small>
+        </div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="childCity">Napisz nazwę miasta, w którym spędziłeś dzieciństwo:</label>
-          <input type="text" class="form-control" id="childCity" ng-model="NFdataTab5.ChildCity"required>
+          <input type="text" class="form-control" id="childCity" name="mdziecinstwaInput"ng-model="NFdataTab5.ChildCity"ng-required="true">
+          <div ng-show="myForm.mdziecinstwaInput.$touched && myForm.mdziecinstwaInput.$invalid">
+            <small style="color:red; display: block; text-align: center;">Podaj prawidłowe miasto</small>
+          </div>
         </div>
         <div class="form-group col-md-6">
           <label for="likeCity">Podobało Ci się tam?</label>
-          <input id="inputState" class="form-control" id="likeCity" ng-model="NFdataTab5.ChildCity2"required>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck" ng-model="check">
-          <label class="form-check-label" for="gridCheck">
-            Potwierdzam prawdziwość danych
-          </label>
+          <select name="lubiszInput" ng-model="NFdataTab5.ChildCity2" class="custom-select" ng-required="true">
+            <option value="Tak">Tak</option>
+            <option value="Nie">Nie</option>
+          </select>
+          <div ng-show="myForm.lubiszInput.$touched && myForm.lubiszInput.$invalid">
+            <small style="color:red; display: block; text-align: center;">Podaj prawidłową odpowiedź</small>
+          </div>
+          <!-- <input id="inputState" class="form-control" id="likeCity" ng-model="NFdataTab5.ChildCity2"required> -->
         </div>
       </div>
       <a class="float-left ml-5" href="#!/view4_2"><button type="button" class="btn btn-secondary">Cofnij</button></a> 
       <button type="button" class="btn btn-warning mLeft4" data-toggle="modal" data-target="#alertModal5_2">Usuń wszystko i zacznij od nowa</button>
       <a href="#!/view3_1_2"><button type="button" class="btn btn-danger mLeft3">Anuluj</button></a>
-      <button type="submit" class="btn btn-secondary mLeft1" ng-click="pushData5()" ng-disabled="!check">Przejdź dalej</button>
+      <button type="submit" class="btn btn-secondary mLeft1" ng-click="pushData5()" ng-disabled="myForm.$invalid">Przejdź dalej</button>
     </form>
     <!-- -modal------------------------------------------------------------------------- -->
     <div class="modal fade" id="alertModal5_2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

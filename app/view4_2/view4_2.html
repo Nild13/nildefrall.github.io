@@ -5,7 +5,7 @@
 
 <div class="container">
   
-  <form name="myForm" action="#!/view5_2">
+  <form name="myForm" action="#!/view5_2" novalidate>
     <h1 class="d-flex justify-content-center">Bardzo ważny formularz</h1>
     <nav aria-label="...">
     <ul class="pagination justify-content-center">
@@ -19,51 +19,85 @@
     <div class="form-row">
         <div class="form-group col-md-6">
           <label for="name">Imię</label>
-          <input type="text" class="form-control" id="name" ng-model="NFdataTab.name"required>
+          <input type="text" class="form-control" id="name" name="imieInput" ng-model="NFdataTab.name" ng-required="true">
+          <div ng-show="myForm.imieInput.$touched && myForm.imieInput.$invalid">
+            <small style="color: red; display: block; text-align: center;">Wprowadź poprawne imię</small>
+          </div>
         </div>
         <div class="form-group col-md-6">
           <label for="inputPassword4">Nazwisko</label>
-          <input type="text" class="form-control" id="inputPassword4" ng-model="NFdataTab.surname"required>
+          <input type="text" class="form-control" id="inputPassword4" name ="nazwiskoInput" ng-model="NFdataTab.surname"ng-required="true">
+          <div ng-show="myForm.nazwiskoInput.$invalid && myForm.nazwiskoInput.$touched">
+            <small style="color: red; display: block; text-align: center;">Wprowadź poprawne nazwisko</small>
+          </div>
         </div>
       </div>
       <div class="form-group">
         <label for="PESEL">PESEL</label>
-        <input type="text" class="form-control" id="PESEL" ng-model="NFdataTab.PESEL"required>
+        <input type="text" class="form-control" id="PESEL" name="peselInput" ng-model="NFdataTab.PESEL"ng-required="true">
+        <div ng-show="myForm.peselInput.$touched && myForm.peselInput.$invalid">
+          <small style="color: red; display: block; text-align: center;">Wprowadź poprawny PESEL</small>
+        </div>
       </div>
       <div class="form-group">
         <label for="confession">Wyznanie</label>
-        <input type="text" class="form-control" id="confession" ng-model="NFdataTab.confession"required>
+        <input type="text" class="form-control" id="confession" name="confessionInput" ng-model="NFdataTab.confession"ng-required="true">
+        <div ng-show=" myForm.confessionInput.$touched && myForm.confessionInput.$invalid">
+          <small style="color: red; display: block; text-align: center;">Podaj prawidłowe wyznanie</small>
+        </div>
       </div>
       <div class="form-group">
         <label for="likedClub">Ulubiony klub sportowy?</label>
-        <input type="text" class="form-control" id="likedClub" ng-model="NFdataTab.FavoritSport" required>
+        <input type="text" class="form-control" id="likedClub" name="klubInput"ng-model="NFdataTab.FavoritSport" ng-required="true">
+        <div ng-show="myForm.klubInput.$touched && myForm.klubInput.$invalid">
+          <small style="color: red; display: block; text-align: center;">Wprowadź poprawny klub sportowy</small>
+        </div>
       </div>
       <div class="form-group">
         <label for="inputAddress">Adres</label>
-        <input type="text" class="form-control" id="inputAddress" ng-model="NFdataTab.address"required>
+        <input type="text" class="form-control" id="inputAddress" name="adresInput"ng-model="NFdataTab.address"ng-required="true">
+        <div ng-show="myForm.adresInput.$touched && myForm.adresInput.$invalid">
+          <small style="color: red; display: block; text-align: center;">Wprowadź poprawny adres</small>
+        </div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="inputCity">Miasto</label>
-          <input type="text" class="form-control" id="inputCity" ng-model="NFdataTab.city"required>
+          <input type="text" class="form-control" id="inputCity" name="miastoInput"ng-model="NFdataTab.city"ng-required="true">
+          <div ng-show="myForm.miastoInput.$touched && myForm.miastoInput.$invalid">
+            <small style="color: red; display: block; text-align: center;">Wprowadź poprawne miasto</small>
+          </div>
         </div>
         <div class="form-group col-md-6">
           <label for="inputState">Województwo</label>
-          <input id="inputState" class="form-control" ng-model="NFdataTab.voivodeship"required>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck" ng-model="check">
-          <label class="form-check-label" for="gridCheck">
-            Potwierdzam prawdziwość danych
-          </label>
+          <select ng-model="NFdataTab.voivodeship" name="wojewodztwoInput" class="custom-select" ng-required="true">
+            <option value="Dolnośląskie">Dolnośląskie</option>
+            <option value="Kujawsko-Pomorskie">Kujawsko-Pomorskie</option>
+            <option value="Lubelskie">Lubelskie</option>
+            <option value="Lubuskie">Lubuskie</option>
+            <option value="Łódzkie">Łódzkie</option>
+            <option value="Małopolskie">Małopolskie</option>
+            <option value="Mazowieckie">Mazowieckie</option>
+            <option value="Opolskie">Opolskie</option>
+            <option value="Podkarpackie">Podkarpackie</option>
+            <option value="Podlaskie">Podlaskie</option>
+            <option value="Pomorskie">Pomorskie</option>
+            <option value="Śląskie">Śląskie</option>
+            <option value="Świętokrzyskie">Świętokrzyskie</option>
+            <option value="Warmińsko-Mazurskie">Warmińsko-Mazurskie</option>
+            <option value="Wielkopolskie">Wielkopolskie</option>
+            <option value="Zachodniopomorskie">Zachodniopomorskie</option>
+          </select>
+          <!-- <input id="inputState" class="form-control" name="wojewodztwoInput"ng-model="NFdataTab.voivodeship"ng-required="true"> -->
+          <div ng-show="myForm.wojewodztwoInput.$touched && myForm.wojewodztwoInput.$invalid">
+            <small style="color: red; display: block; text-align: center;">Wprowadź poprawne Województwo</small>
+          </div>
         </div>
       </div>
       <!-- <a class="float-left ml-5" href="#!/view5"><button type="button" class="btn btn-secondary">Cofnij</button></a>  -->
       <a href="#!/view3_1_2"><button type="button" class="btn btn-danger mLeft2">Anuluj</button></a>
       <button type="button" class="btn btn-warning mLeft4"  data-toggle="modal" data-target="#alertModal4_2">Usuń wszystko i zacznij od nowa</button>
-      <button type="submit" class="btn btn-secondary mLeft1" ng-disabled="!check" ng-click="pushData()">Przejdź dalej</button>
+      <button type="submit" class="btn btn-secondary mLeft1" ng-disabled="myForm.$invalid" ng-click="pushData()">Przejdź dalej</button>
       <!-- <input type="submit" value="submit"> -->
     </form>
     <!-- -modal------------------------------------------------------------------------- -->

@@ -36,13 +36,13 @@
       <div class="form-group">
         <label for="PESEL">PESEL</label>
         <input type="text" class="form-control" id="PESEL" name="peselInput" ng-model="NFdataTab.PESEL" ng-required="true" ng-blur="validatePesel(NFdataTab.PESEL)">
-        <div ng-show="myForm.peselInput.$invalid && !validatePesel(NFdataTab.PESEL) && myForm.peselInput.$touched ">
+        <div ng-show="myForm.peselInput.$touched && (myForm.peselInput.$invalid || !validatePesel(NFdataTab.PESEL)) ">
           <small style="color: red; display: block; text-align: center;">Wprowadź poprawny PESEL</small>
         </div>
       </div>
-      <p>PESEL{{validatePesel(NFdataTab.PESEL)}}</p>
+      <!-- <p>PESEL{{validatePesel(NFdataTab.PESEL)}}</p>
       <p>INVALID{{myForm.peselInput.$invalid}}</p>
-      <p>TOUCHED{{myForm.peselInput.$touched}}</p>
+      <p>TOUCHED{{myForm.peselInput.$touched}}</p> -->
       <!-- ------------------------------------------------------------------------------------------------------------ -->
       <div class="form-group">
         <label for="confession">Wyznanie</label>

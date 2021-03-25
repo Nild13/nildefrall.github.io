@@ -90,3 +90,6 @@ select.ng-invalid.ng-touched{
 input.ng-empty{
     box-shadow: none !important;
 }
+input.ng-show{
+    border:2px solid red !important;
+}

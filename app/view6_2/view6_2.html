@@ -43,13 +43,15 @@
             <small style="color: red; display: block; text-align: center;">Wprowadź poprawną markę butów</small>
           </div>
         </div>
+        <!-- ---------------------------------------------------------------------------------------------------------------- -->
       <div class="form-group">
         <label for="bestBoss">Prezesem jedynej słusznej Partii jest?</label>
-        <input type="text" class="form-control" id="bestBoss" name="jarekInput" ng-model="NFdataTab6.Chairman" ng-required="true">
+        <input type="text" class="form-control" id="bestBoss" name="jarekInput" ng-model="NFdataTab6.Chairman" ng-required="true" pattern="(Jarosław Kaczyński)">
         <div ng-show="myForm.jarekInput.$touched && myForm.jarekInput.$invalid">
           <small style="color: red; display: block; text-align: center;">Wprowadź poprawnego Prezesa</small>
         </div>
       </div>
+      <!-- ---------------------------------------------------------------------------------------------------------------- -->
       <div class="form-group">
         <label for="ram">Kingston czy GoodRam?</label>
         <input type="text" class="form-control" id="ram" name="ramInput"ng-model="NFdataTab6.RAM" ng-required="true">

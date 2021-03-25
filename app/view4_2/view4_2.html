@@ -32,13 +32,18 @@
           </div>
         </div>
       </div>
+      <!-- ------------------------------------------------------------------------------------------------------------ -->
       <div class="form-group">
         <label for="PESEL">PESEL</label>
-        <input type="text" class="form-control" id="PESEL" name="peselInput" ng-model="NFdataTab.PESEL"ng-required="true">
-        <div ng-show="myForm.peselInput.$touched && myForm.peselInput.$invalid">
+        <input type="text" class="form-control" id="PESEL" name="peselInput" ng-model="NFdataTab.PESEL" ng-required="true" ng-blur="validatePesel(NFdataTab.PESEL)">
+        <div ng-show="myForm.peselInput.$invalid && !validatePesel(NFdataTab.PESEL) && myForm.peselInput.$touched ">
           <small style="color: red; display: block; text-align: center;">Wprowadź poprawny PESEL</small>
         </div>
       </div>
+      <p>PESEL{{validatePesel(NFdataTab.PESEL)}}</p>
+      <p>INVALID{{myForm.peselInput.$invalid}}</p>
+      <p>TOUCHED{{myForm.peselInput.$touched}}</p>
+      <!-- ------------------------------------------------------------------------------------------------------------ -->
       <div class="form-group">
         <label for="confession">Wyznanie</label>
         <input type="text" class="form-control" id="confession" name="confessionInput" ng-model="NFdataTab.confession"ng-required="true">
@@ -97,7 +102,7 @@
       <!-- <a class="float-left ml-5" href="#!/view5"><button type="button" class="btn btn-secondary">Cofnij</button></a>  -->
       <a href="#!/view3_1_2"><button type="button" class="btn btn-danger mLeft2">Anuluj</button></a>
       <button type="button" class="btn btn-warning mLeft4"  data-toggle="modal" data-target="#alertModal4_2">Usuń wszystko i zacznij od nowa</button>
-      <button type="submit" class="btn btn-secondary mLeft1" ng-disabled="myForm.$invalid" ng-click="pushData()">Przejdź dalej</button>
+      <button type="submit" class="btn btn-secondary mLeft1" ng-disabled="myForm.$invalid || !validatePesel(NFdataTab.PESEL)" ng-click="pushData()">Przejdź dalej</button>
       <!-- <input type="submit" value="submit"> -->
     </form>
     <!-- -modal------------------------------------------------------------------------- -->

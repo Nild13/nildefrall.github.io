@@ -13,6 +13,7 @@ angular.module('myApp.view3_1_2', ['ngRoute'])
   .controller('View3_1_2Ctrl', ['$scope', '$http', 'localStorageService', function ($scope, $http, localStorageService){
     // ----------------------------------------------------------------------------------
  // nie mam juz si na t0 teraz musi sie udac
+ $scope.statusURL = 'dfdfg';
  $scope.juerel = function(adresURL){
 
  
@@ -27,6 +28,8 @@ angular.module('myApp.view3_1_2', ['ngRoute'])
     
     console.log('succcess');
 }, function errorCallback(response) {
+
+  statusURL = response.status;
     
     console.log(adresURL);
     console.log(response.status);

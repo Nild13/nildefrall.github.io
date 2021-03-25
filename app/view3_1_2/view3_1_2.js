@@ -1,10 +1,6 @@
 'use strict';
 
-// const { forEach } = require("angular");
-
 angular.module('myApp.view3_1_2', ['ngRoute'])
-
-
 
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/view3_1_2', {
@@ -14,25 +10,39 @@ angular.module('myApp.view3_1_2', ['ngRoute'])
   }])
 
 
-  .controller('View3_1_2Ctrl', ['$scope', 'localStorageService', function ($scope, localStorageService){
-    // $scope.flaga = "true";
+  .controller('View3_1_2Ctrl', ['$scope', '$http', 'localStorageService', function ($scope, $http, localStorageService){
+    // ----------------------------------------------------------------------------------
+ // nie mam juz si na t0 teraz musi sie udac
+ $scope.juerel = function(adresURL){
+
+ 
+ $http({
+  method: 'GET',
+  url: adresURL,
+  headers: {
+    "Content-Type": "application/json",
+    "my-token": "mytoken",
+  }
+}).then(function successCallback(response) {
+    
+    console.log('succcess');
+}, function errorCallback(response) {
+    
+    console.log(adresURL);
+    console.log(response.status);
+});
+}
+    //------------------------------------------------------------------------------------------
+
     $scope.flaga = localStorage.getItem('NFdata_2') !== null
     $scope.flaga2 = localStorage.getItem('NFdata7_2') !== null
     console.log($scope.flaga)
-  //   $scope.funkcjaButton = function(){
-  //     if (localStorage.getItem('NFdata') == null) {
-  //       return $scope.flaga = true;
-  //   }
-  //   else{
-  //       return $scope.flaga = false;
-  //   }
-  // }
+
     $scope.clearLS = function(){   
         localStorage.removeItem("NFdata_2")
         localStorage.removeItem("NFdata5_2")
         localStorage.removeItem("NFdata6_2")
         window.location.href = "#!/view4_2";
 }
-// $scope.funkcjaButton()
   }]);
 

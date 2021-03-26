@@ -19,7 +19,7 @@
 }
 .margins{
     display: block;
-    margin-right: 60% !important;
+    margin-right: 73% !important;
     margin-left: 1%;
 }
 .margins2{
@@ -63,8 +63,8 @@
 }
 .buttonTop{
     position: absolute;
-    top: 20%;
-    left: 34%;
+    top: 23%;
+    left: 35%;
     font-size: 50px !important;
     text-decoration: none;
 }
@@ -92,4 +92,18 @@ input.ng-empty{
 }
 input.ng-show{
     border:2px solid red !important;
+}
+.pe{
+    position: absolute;
+    left: 50%;
+    font-size: 30px;
+}
+.pel{
+    position: absolute;
+    left: 45%;
+    font-size: 30px;
+}
+.pele{
+    display: block;
+    margin-left: 30%;
 }

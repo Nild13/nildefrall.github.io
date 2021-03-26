@@ -12,8 +12,17 @@ angular.module('myApp.view3_1_2', ['ngRoute'])
 
   .controller('View3_1_2Ctrl', ['$scope', '$http', 'localStorageService', function ($scope, $http, localStorageService){
     // ----------------------------------------------------------------------------------
- // nie mam juz si na t0 teraz musi sie udac
- $scope.statusURL = 'dfdfg';
+ $scope.statusURL = ' ';
+
+
+ $scope.functionURL = function(){
+   if ($scope.statusURL === 404){ 
+     document.querySelector('.pe').style.color = "red"
+   }
+   else if($scope.statusURL === 200){
+     document.querySelector('.pe').style.color = "green"
+   }
+ }
  $scope.juerel = function(adresURL){
 
  
@@ -25,15 +34,20 @@ angular.module('myApp.view3_1_2', ['ngRoute'])
     "my-token": "mytoken",
   }
 }).then(function successCallback(response) {
+
+  $scope.statusURL = '';
+   $scope.statusURL = response.status
     
     console.log('succcess');
+    $scope.functionURL()
 }, function errorCallback(response) {
 
-  statusURL = response.status;
-    
-    console.log(adresURL);
-    console.log(response.status);
+
+    $scope.statusURL = '';
+    $scope.statusURL = response.status
+    $scope.functionURL()
 });
+
 }
     //------------------------------------------------------------------------------------------
 

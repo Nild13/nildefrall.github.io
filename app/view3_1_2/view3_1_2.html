@@ -6,10 +6,13 @@
     <a class=" d-flex justify-content-center  navbar-light"><button type="button" ng-click="clearLS()"class="btn btn-primary mTop">Rozpocznij wypełnianie nowego formularza</button></a>
     <a class=" d-flex justify-content-center  navbar-light"href="#!/view7_2"><button type="button" ng-show="{{flaga2}}" class="btn btn-warning buttonTop2">Zobacz podsumowanie swojego formularza</button></a>
     <form>
-    <label for="adres">Wpisz adres URL</label>
-    <input type="text" placeholder="wpisz adres URL" ng-model="adresStrony" id="adres">
-    <button type="submit" ng-click="juerel(adresStrony)">Klik </button>
-    {{statusURL}}
+      <p></p>
+    <input type="text" class="form-control"  ng-model="adresStrony" id="adres" placeholder="wpisz adres URL" aria-describedby="passwordHelpBlock">
+    <small id="passwordHelpBlock" class="form-text text-muted justify-content-center">
+     <p class="pele">Przykładowy działający adres: 'https://jsonplaceholder.typicode.com/posts'</p>
+    </small>
+    <button type="submit" class="btn btn-secondary btn-lg btn-block" ng-click="juerel(adresStrony)">Kliknij w przycisk, aby sprawdzić czy strona zwraca poprawny status</button>
+    <p class="pel">Status:<p class="pe">{{statusURL}}</p></p>
   </form>
   
  

@@ -40,9 +40,7 @@
           <small style="color: red; display: block; text-align: center;">Wprowadź poprawny PESEL</small>
         </div>
       </div>
-      <!-- <p>PESEL{{validatePesel(NFdataTab.PESEL)}}</p>
-      <p>INVALID{{myForm.peselInput.$invalid}}</p>
-      <p>TOUCHED{{myForm.peselInput.$touched}}</p> -->
+      
       <!-- ------------------------------------------------------------------------------------------------------------ -->
       <div class="form-group">
         <label for="confession">Wyznanie</label>
@@ -93,17 +91,17 @@
             <option value="Wielkopolskie">Wielkopolskie</option>
             <option value="Zachodniopomorskie">Zachodniopomorskie</option>
           </select>
-          <!-- <input id="inputState" class="form-control" name="wojewodztwoInput"ng-model="NFdataTab.voivodeship"ng-required="true"> -->
+          
           <div ng-show="myForm.wojewodztwoInput.$touched && myForm.wojewodztwoInput.$invalid">
             <small style="color: red; display: block; text-align: center;">Wprowadź poprawne Województwo</small>
           </div>
         </div>
       </div>
-      <!-- <a class="float-left ml-5" href="#!/view5"><button type="button" class="btn btn-secondary">Cofnij</button></a>  -->
+      
       <a href="#!/view3_1_2"><button type="button" class="btn btn-danger mLeft2">Anuluj</button></a>
       <button type="button" class="btn btn-warning mLeft4"  data-toggle="modal" data-target="#alertModal4_2">Usuń wszystko i zacznij od nowa</button>
       <button type="submit" class="btn btn-secondary mLeft1" ng-disabled="myForm.$invalid || !validatePesel(NFdataTab.PESEL)" ng-click="pushData()">Przejdź dalej</button>
-      <!-- <input type="submit" value="submit"> -->
+      
     </form>
     <!-- -modal------------------------------------------------------------------------- -->
     <div class="modal fade" id="alertModal4_2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

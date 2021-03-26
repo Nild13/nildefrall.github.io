@@ -12,7 +12,7 @@ angular.module('myApp.view6_2', ['ngRoute'])
 
   .controller('View6_2Ctrl', ['$scope', 'localStorageService', function ($scope, localStorageService){
     $scope.clearLS4 = function(){
-      // if(confirm("Usunięcie spowoduje, że jeżeli rozpocząłeś pracę nad formularzem zostanie on wyczyszczony. Na pewno tego chcesz?")){
+
         localStorage.removeItem("NFdata_2")
         localStorage.removeItem("NFdata5_2")
         localStorage.removeItem("NFdata6_2")
@@ -20,10 +20,7 @@ angular.module('myApp.view6_2', ['ngRoute'])
         window.location.href = "#!/view3_1_2";
       }
       
-//       else{
-//         alert("Anulowano")
-//   }
-// }
+
     $scope.NFdataTab6 = [];
     $scope.pushData6 = function(){
     

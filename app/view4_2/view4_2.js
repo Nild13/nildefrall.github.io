@@ -38,22 +38,17 @@ angular.module('myApp.view4_2', ['ngRoute'])
   
     $scope.clearLS2 = function(){
      
-      // if(confirm("Usunięcie spowoduje, że jeżeli rozpocząłeś pracę nad formularzem zostanie on wyczyszczony. Na pewno tego chcesz?")){
+   
         localStorage.removeItem("NFdata_2")
         localStorage.removeItem("NFdata5_2")
         localStorage.removeItem("NFdata6_2")
         localStorage.removeItem("NFdata7_2")
         window.location.href = "#!/view3_1_2";
-      // }
-      //tu modal
-  //     else{
-  //       alert("Anulowano")
-  // }
+  
 }
     $scope.NFdataTab = [];
     $scope.pushData = function(){
-      // if(NFname && NFsurname && NFPESEL && NFconfession && NFUKsport && NFaddress && NFcity && NFvoivodeship){
-      // console.log(NFname, NFsurname, NFPESEL, NFconfession, NFUKsport, NFaddress, NFcity, NFvoivodeship)
+
 
       
           let NFdataFromInput = { 
@@ -88,6 +83,6 @@ angular.module('myApp.view4_2', ['ngRoute'])
   }
   
   $scope.downloadDataFromLS()
-  // $scope.validatePesel($scope.NFdataTab.PESEL)
+
           
   }]);

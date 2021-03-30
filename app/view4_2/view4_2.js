@@ -10,7 +10,23 @@ angular.module('myApp.view4_2', ['ngRoute'])
   }])
 
 
-  .controller('View4_2Ctrl', ['$scope', 'localStorageService', function ($scope, localStorageService){
+  .controller('View4_2Ctrl', ['$scope', '$http', '$log', 'localStorageService', function ($scope, $http, $log, localStorageService){
+        // ----------------------------------------------------------------------------------
+ $scope.statusURL = ' ';
+ $scope.falange = false;
+
+ $scope.juerel = function(adresURL){
+  $http({
+      method: 'GET',
+      url: adresURL
+  }).then(({status}) => {
+     $scope.falange = status !== 200;
+  },({status}) => {
+      $scope.falange = status !== 200;
+  });
+
+}
+    //------------------------------------------------------------------------------------------
     $scope.metoda = function(){
       if($scope.NFdataTab.PESEL === true){
         return true

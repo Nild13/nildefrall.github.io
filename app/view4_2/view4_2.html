@@ -63,6 +63,14 @@
           <small style="color: red; display: block; text-align: center;">Wprowadź poprawny adres</small>
         </div>
       </div>
+      <div class="form-group">
+        <label for="inputURLAddress">AdresURL</label>
+        <input type="text" class="form-control"  id="inputURlAddress" ng-model="adresStrony" id="adres" placeholder="wpisz adres URL" aria-describedby="passwordHelpBlock" ng-required="true" ng-blur="juerel(adresStrony)">
+         <!-- działający adres: 'https://jsonplaceholder.typicode.com/posts' -->
+        <div ng-show="falange">
+          <small style="color: red; display: block; text-align: center;">Wprowadź poprawny adres URL</small>
+        </div>
+      </div>
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="inputCity">Miasto</label>
@@ -100,7 +108,7 @@
       
       <a href="#!/view3_1_2"><button type="button" class="btn btn-danger mLeft2">Anuluj</button></a>
       <button type="button" class="btn btn-warning mLeft4"  data-toggle="modal" data-target="#alertModal4_2">Usuń wszystko i zacznij od nowa</button>
-      <button type="submit" class="btn btn-secondary mLeft1" ng-disabled="myForm.$invalid || !validatePesel(NFdataTab.PESEL)" ng-click="pushData()">Przejdź dalej</button>
+      <button type="submit" class="btn btn-secondary mLeft1" ng-disabled="myForm.$invalid || !validatePesel(NFdataTab.PESEL) || falange" ng-click="pushData()">Przejdź dalej</button>
       
     </form>
     <!-- -modal------------------------------------------------------------------------- -->
